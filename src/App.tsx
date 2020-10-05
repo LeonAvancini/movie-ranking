@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Menu from "./pages/Menu";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Login from "./pages/Login";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default () => {
+  //TODO: Create routing
 
-export default App;
+  const [logged, setLogged] = useState(false);
+
+  if (!logged) {
+    return (
+      <>
+        <Login LogedIn={setLogged} />
+        <Footer />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Header />
+        <Menu />
+        <Footer />
+      </>
+    );
+  }
+};
