@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { h3, paragraph } from "../../fontSizes";
-import DownArrow from "../icons/DownArrow/DownArrow";
+import DownArrow from "../icons/DownArrow";
 
 const Container = styled.div`
   position: relative;

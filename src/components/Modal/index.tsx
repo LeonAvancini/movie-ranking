@@ -2,14 +2,13 @@ import * as React from "react";
 import usePortal from "react-cool-portal";
 import styled from "styled-components/macro";
 import { h3 } from "../../fontSizes";
-import StarIcon from "../icons/starIcon/StarIcon";
+import StarIcon from "../icons/StarIcon";
 
 const StyledButton = styled.button`
   border: none;
   border-radius: 10px 10px 0px 0px;
   padding: 0px;
 `;
-
 const BackGround = styled.div`
   position: fixed;
   height: 100vh;
@@ -31,7 +30,6 @@ const Modal = styled.div`
   box-shadow: 0px -1px 46px -10px rgba(255, 255, 255, 1);
   border-radius: 5px;
 `;
-
 const Image = styled.img`
   border-radius: 5px 5px 0px 0px;
   color: black;
@@ -120,6 +118,8 @@ const StarButton = styled.button`
     cursor: pointer;
   }
 `;
+
+
 interface Props {
   children: React.ReactNode;
   title: string;

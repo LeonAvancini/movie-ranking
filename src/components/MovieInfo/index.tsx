@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { h2, h3 } from "../../fontSizes";
-import StarIcon from "../icons/starIcon/StarIcon";
+import StarIcon from "../icons/StarIcon";
 import Modal from "../Modal";
 
 const Container = styled.div`
