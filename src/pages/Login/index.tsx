@@ -57,11 +57,11 @@ const InputStyled = styled.input`
 const ButtonStyled = styled.button`
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #ffc04d;
   font-size: 15px;
   width: 100px;
   margin-top: 10px;
   height: 30px;
+  background-color: #ffc04d;
   &:hover {
     cursor: pointer;
     background-color: #ffae1a;

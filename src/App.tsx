@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 export default () => {
   //TODO: Create routing
 
-  const [logged, setLogged] = useState(false);
+  const [logged, setLogged] = useState(true);
 
   if (!logged) {
     return (
