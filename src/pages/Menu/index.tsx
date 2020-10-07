@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 
 import MovieInfo from "../../components/MovieInfo";
 import SearchContext from "../../contexts/SearchContext";
+import { h2 } from "../../fontSizes";
 
 const PageContainer = styled.div`
   display: flex;
@@ -19,6 +20,20 @@ const MoviesContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   width: 80%;
+`;
+
+const InformativeText = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  ${h2};
+  color: white;
+`;
+const ColorText = styled.div`
+  ${h2};
+  padding: 5px;
+  color: orange;
 `;
 
 //TODO: who type is a image when its coming from backend...?
@@ -70,7 +85,7 @@ const moviesArray: Movie[] = [
 ];
 
 export default () => {
-  const { searchFormatted } = useContext(SearchContext);
+  const { searchFormatted, search } = useContext(SearchContext);
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
@@ -80,11 +95,19 @@ export default () => {
       )
     );
   }, [searchFormatted]);
-
+  if (filteredMovies.length === 0) {
+    return (
+      <PageContainer>
+        <InformativeText>
+          We can't match <ColorText>"{search}"</ColorText> Movie :(
+        </InformativeText>
+      </PageContainer>
+    );
+  }
   return (
     <PageContainer>
       <MoviesContainer>
-        {filteredMovies.map((movie) => {
+        {filteredMovies.map((movie: Movie) => {
           return (
             <MovieInfo
               key={movie.id}
