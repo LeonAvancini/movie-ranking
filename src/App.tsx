@@ -3,6 +3,7 @@ import Menu from "./pages/Menu";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Login from "./pages/Login";
+import { SearchProvider } from "./contexts/SearchContext";
 
 export default () => {
   //TODO: Create routing
@@ -19,8 +20,10 @@ export default () => {
   } else {
     return (
       <>
-        <Header />
-        <Menu />
+        <SearchProvider>
+          <Header />
+          <Menu />
+        </SearchProvider>
         <Footer />
       </>
     );

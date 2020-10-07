@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components/macro";
+import SearchContext from "../../contexts/SearchContext";
 import { paragraph } from "../../fontSizes";
 import SearchIcon from "../icons/SearchIcon";
 
@@ -34,7 +35,8 @@ const SearchIconContainer = styled.div`
 `;
 
 export default () => {
-  const [movieNameValue, onSearchChange] = useState("");
+
+  const { search, setSearch } = useContext(SearchContext);
 
   return (
     <Container>
@@ -46,9 +48,9 @@ export default () => {
         <InputStyled
           type="text"
           onChange={(event) => {
-            onSearchChange(event.target.value);
+            setSearch(event.target.value);
           }}
-          value={movieNameValue}
+          value={search}
           onSubmit={(e) => {
             e.preventDefault();
           }}
